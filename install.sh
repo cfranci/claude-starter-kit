@@ -47,6 +47,14 @@ if [ -d "$SCRIPT_DIR/scripts" ]; then
   echo "  ✓ Scripts"
 fi
 
+# iTerm profile
+if [ -d "$SCRIPT_DIR/iterm" ] && [ -d "$HOME/Library/Application Support/iTerm2/DynamicProfiles" ]; then
+  cp "$SCRIPT_DIR/iterm/"*.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"
+  echo "  ✓ iTerm2 Glas profile (translucent terminal)"
+elif [ -d "$SCRIPT_DIR/iterm" ]; then
+  echo "  ⚠ iTerm2 not found — skipped Glas profile"
+fi
+
 echo ""
 echo "  Installed! Restart Claude Code, then run /setup"
 echo ""
