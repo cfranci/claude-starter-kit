@@ -2,7 +2,55 @@
 
 Make Claude Code actually fun to use. 30 slash commands, 12 thinking frameworks, a design toolkit, one-letter shortcuts, custom spinner verbs, and a translucent terminal profile.
 
-## Install
+## Mac Setup (from scratch)
+
+If you don't have Claude Code installed yet, start here.
+
+### 1. Install Node.js
+
+Claude Code requires Node.js 18+. Install it via Homebrew:
+
+```bash
+brew install node
+```
+
+Or if you don't have Homebrew:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install node
+```
+
+### 2. Install Claude Code
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### 3. Save to your shell
+
+Add Claude Code to your PATH permanently so it works in every new terminal:
+
+```bash
+echo 'export PATH="$(npm config get prefix)/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Verify it works:
+
+```bash
+claude --version
+```
+
+### 4. First launch
+
+```bash
+claude
+```
+
+It will ask you to log in with your Anthropic account on first run.
+
+### 5. Install the starter kit
 
 ```bash
 git clone https://github.com/cfranci/claude-starter-kit.git
