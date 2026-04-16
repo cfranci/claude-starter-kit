@@ -41,16 +41,16 @@ branch_str=""
 [ -n "$branch" ] && branch_str=" (${branch})"
 
 if [ -n "$custom_label" ]; then
-  # Custom label mode: ★ cf [label] with color
-  line="★ cf [${custom_label}]${branch_str} | ◇ ${in_k}K↓ ${out_k}K↑ ${ctx}"
+  # Custom label mode: ★ <user> [label] with color
+  line="★ ${USER} [${custom_label}]${branch_str} | ◇ ${in_k}K↓ ${out_k}K↑ ${ctx}"
   echo -e "${color_on}${line}${color_off}"
 else
-  # Auto mode: ★ cf [folder]
+  # Auto mode: ★ <user> [folder]
   if [ "$dir" = "$HOME" ]; then
     folder_label="~"
   else
     folder_label="${name}"
   fi
-  line="★ cf [${folder_label}]${branch_str} | ◇ ${in_k}K↓ ${out_k}K↑ ${ctx}"
+  line="★ ${USER} [${folder_label}]${branch_str} | ◇ ${in_k}K↓ ${out_k}K↑ ${ctx}"
   echo -e "${line}"
 fi

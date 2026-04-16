@@ -24,7 +24,7 @@ This is someone else's repo. Review it remotely — do NOT clone or download.
 
 4. **Offer options**:
    - **Fork it** — `gh repo fork <owner/repo> --clone=false`
-   - **Clone it** — clone to `/Users/cf/projects/<name>` for deeper exploration
+   - **Clone it** — clone to `~/Projects/<name>` for deeper exploration
    - **Star it** — `gh api user/starred/<owner/repo> -X PUT`
    - **Deeper dive** — read more source files
    - **Pass** — move on

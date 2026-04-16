@@ -8,13 +8,13 @@ arguments:
 
 You are opening a project for the user. Always ask to label when opening a project.
 
-The user's GitHub username is **cfranci**. Local project dirs: `/Users/cf/projects/`, `/Users/cf/Desktop/Projects/`, `/Applications/`, `/Users/cf/`, `/Users/cf/moms projects/`
+Detect the user's GitHub username with `gh api user --jq .login` (cache for session). Common local project dirs to search: `~/Projects/`, `~/projects/`, `~/Desktop/Projects/`, `~/Documents/Projects/`, `~/`, `/Applications/`.
 
 ## Route `$ARGUMENTS`
 
 **Empty** → SESSION BROWSER (below)
 **Local path** (`/`, `~`, `./`) → LOCAL PROJECT (below)
-**GitHub URL or owner/repo** → if owner is `cfranci`, treat as OWN REPO. Otherwise read `~/.claude/commands/open-flows/external-repo.md` and follow it.
+**GitHub URL or owner/repo** → if owner matches the user's GitHub username, treat as OWN REPO. Otherwise read `~/.claude/commands/open-flows/external-repo.md` and follow it.
 **Just a name** → OWN PROJECT SEARCH (below)
 
 ---
@@ -45,8 +45,8 @@ Run a Python script that scans `~/.claude/projects/` for JSONL session files mod
 
 1. Search local dirs: `find` across all project dirs with `-iname "*<name>*"` (maxdepth 3)
 2. If found locally → LOCAL PROJECT
-3. If not found → check GitHub: `gh repo list cfranci --limit 100 --json name,description | grep -i "<name>"`
-4. If on GitHub → offer to clone to `/Users/cf/projects/<name>`, then LOCAL PROJECT
+3. If not found → check GitHub: `gh repo list --limit 100 --json name,description | grep -i "<name>"`
+4. If on GitHub → offer to clone to `~/Projects/<name>`, then LOCAL PROJECT
 5. Not found anywhere → ask for clarification
 
 ---
@@ -56,4 +56,4 @@ Run a Python script that scans `~/.claude/projects/` for JSONL session files mod
 1. Extract repo name from URL
 2. Search locally (same as OWN PROJECT SEARCH step 1)
 3. If found → LOCAL PROJECT
-4. If not → offer to clone to `/Users/cf/projects/<name>`, then LOCAL PROJECT
+4. If not → offer to clone to `~/Projects/<name>`, then LOCAL PROJECT

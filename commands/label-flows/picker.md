@@ -3,7 +3,7 @@
 ## Step 1: Smart suggestion
 
 Generate a context-aware label suggestion (max 3 words):
-1. Current directory basename (if in `~/Projects/`, use its name; if `~/moms projects/`, suggest "Mom"; if `~`, suggest "Home Base")
+1. Current directory basename (if in `~/Projects/` or `~/projects/`, use its name; if `~`, suggest "Home Base")
 2. Git repo name or descriptive branch
 3. Check if suggestion matches a saved preset (show its color if so)
 
@@ -11,7 +11,7 @@ Show: `💡 Suggestion: «Name» — press Enter to accept, or pick from below:`
 
 ## Step 2: Full picker
 
-Read presets from `~/.claude/label-presets.json`. Read colors from `~/.claude/data/colors.json`. List projects from `ls -1d /Users/cf/Projects/*/`.
+Read presets from `~/.claude/label-presets.json`. Read colors from `~/.claude/data/colors.json`. List projects from `ls -1d ~/Projects/*/ 2>/dev/null; ls -1d ~/projects/*/ 2>/dev/null`.
 
 Show in ONE shot:
 ```

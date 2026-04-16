@@ -27,7 +27,7 @@ Example: `/and the API key is stored in .env.local`
 ### Mode 2: Save Note (`--note` or `-n`)
 When `--note` or `-n` flag is present:
 1. Parse the content after the flag
-2. Append to `/Users/cf/.claude/projects/-Users-cf/memory/NOTES.md` with timestamp
+2. Append to `~/.claude/NOTES.md` with timestamp (create the file if it doesn't exist)
 3. Confirm briefly: "Noted."
 4. Resume previous task
 
